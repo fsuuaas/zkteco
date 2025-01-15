@@ -48,7 +48,11 @@ class Attendance
                     'type' => $type
                 ];
 
-                $attData = substr($attData, 49);
+                if($self->deviceName() == "~DeviceName=SpeedFace-V5L\x00"){
+                    $attData = substr($attData, 49);
+                }else{
+                    $attData = substr($attData, 40);
+                }
             }
 
         }
