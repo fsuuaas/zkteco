@@ -10,7 +10,7 @@ class Attendance
      * @param ZKTeco $self
      * @return array [uid, id, state, timestamp]
      */
-    static public function get(ZKTeco $self)
+    static public function get(ZKTeco $self, $record_size = 40)
     {
         $self->_section = __METHOD__;
 
@@ -48,11 +48,7 @@ class Attendance
                     'type' => $type
                 ];
 
-                if($self->deviceName() == "~DeviceName=SpeedFace-V5L\x00"){
-                    $attData = substr($attData, 49);
-                }else{
-                    $attData = substr($attData, 40);
-                }
+                $attData = substr($attData, $record_size);
             }
 
         }

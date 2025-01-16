@@ -307,8 +307,10 @@ Call ZKTeco methods
 //              "timestamp" => "2020-05-27 21:21:06" /* time of attendance */
 //              "type" => 255   /* attendance type, like check-in, check-out, overtime-in, overtime-out, break-in & break-out etc. if attendance type is none of them, it gives  255. */
 //              ]
-
-    $zk->getAttendance(); 
+//      Pass parameter of record size for latest devices like as: Speedface V5L using 49 bytes.
+// Most of the old device using 40 bytes of record size, Example: iClock 680. 
+// For Old Device parameter is optional
+    $zk->getAttendance(49); 
 ```
 
 * __Clear Attendance Log__
