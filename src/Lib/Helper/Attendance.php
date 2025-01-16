@@ -10,7 +10,7 @@ class Attendance
      * @param ZKTeco $self
      * @return array [uid, id, state, timestamp]
      */
-    static public function get(ZKTeco $self, $record_size = 40)
+    static public function get(ZKTeco $self, $record_size)
     {
         $self->_section = __METHOD__;
 
